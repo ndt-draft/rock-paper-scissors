@@ -6,7 +6,13 @@ import Button from "../Button/Button";
 import { selections } from "../constants";
 
 const PCPicked = () => {
-  const { userSelection, pcSelection, changeScreen } = useGame();
+  const { userSelection, pcSelection, changeScreen, handlePcSelect } =
+    useGame();
+
+  useEffect(() => {
+    handlePcSelect();
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {

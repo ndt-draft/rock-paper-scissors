@@ -50,6 +50,16 @@ const GameProvider = ({ children }) => {
   };
 
   const handleUserSelect = (userSelection) => () => {
+    dispatch({
+      type: "update_game",
+      payload: {
+        screen: "user-picked",
+        userSelection,
+      },
+    });
+  };
+
+  const handlePcSelect = () => {
     const pcSelection = lodash.sample([
       "rock",
       "paper",
@@ -57,13 +67,26 @@ const GameProvider = ({ children }) => {
       "spock",
       "lizard",
     ]);
+
+    dispatch({
+      type: "update_game",
+      payload: {
+        pcSelection,
+      },
+    });
+  };
+
+  const handleResult = () => {
     const isUserWon = lodash.includes(
-      winConditions[userSelection],
-      pcSelection
+      winConditions[state.userSelection],
+      state.pcSelection
     );
     const gameStatus =
-      userSelection === pcSelection ? "draw" : isUserWon ? "win" : "lose";
-
+      state.userSelection === state.pcSelection
+        ? "draw"
+        : isUserWon
+        ? "win"
+        : "lose";
     const newGamePoint =
       gameStatus === "win"
         ? state.point + 1
@@ -75,10 +98,7 @@ const GameProvider = ({ children }) => {
     dispatch({
       type: "update_game",
       payload: {
-        screen: "user-picked",
         status: gameStatus,
-        userSelection,
-        pcSelection,
         point: newGamePoint,
       },
     });
@@ -87,6 +107,8 @@ const GameProvider = ({ children }) => {
   const actions = {
     changeScreen,
     handleUserSelect,
+    handlePcSelect,
+    handleResult,
   };
 
   return (
