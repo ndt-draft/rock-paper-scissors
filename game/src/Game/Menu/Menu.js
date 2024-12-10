@@ -9,7 +9,11 @@ const Menu = () => {
   return (
     <StyledMenu>
       {selections.map((selection) => (
-        <Button {...selection} onSelect={handleUserSelect(selection.value)} />
+        <Button
+          key={selection.value}
+          {...selection}
+          onSelect={handleUserSelect(selection.value)}
+        />
       ))}
     </StyledMenu>
   );
