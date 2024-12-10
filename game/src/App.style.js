@@ -8,5 +8,6 @@ export const StyledApp = styled.div`
   .game-wrapper {
     max-width: 1366px;
     margin: auto;
+    padding-top: 32px;
   }
 `;

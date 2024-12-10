@@ -1,10 +1,18 @@
 import logo from "../images/logo-bonus.svg";
+import { StyledHeader, StyledPoint } from "./style";
+import { useGame } from "../GameProvider";
 
 const Header = () => {
+  const { point } = useGame();
   return (
-    <div>
+    <StyledHeader>
       <img src={logo} alt="logo" />
-    </div>
+
+      <StyledPoint>
+        <div className="score">Score</div>
+        <div className="score-point">{point}</div>
+      </StyledPoint>
+    </StyledHeader>
   );
 };
 
