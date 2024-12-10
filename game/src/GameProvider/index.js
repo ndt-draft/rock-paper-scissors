@@ -6,7 +6,7 @@ const initialState = {
   status: null,
   userSelection: null,
   pcSelection: null,
-  point: 0,
+  point: lodash.toNumber(localStorage.getItem("gamePoint")),
 };
 
 const GameContext = React.createContext(initialState);
@@ -26,6 +26,8 @@ function gameReducer(state, action) {
         ...action.payload,
       };
     }
+    default:
+      return state;
   }
 }
 
@@ -56,6 +58,9 @@ const GameProvider = ({ children }) => {
     const gameStatus =
       userSelection === pcSelection ? "draw" : isUserWon ? "win" : "lose";
 
+    const newGamePoint = gameStatus === "win" ? state.point + 1 : state.point;
+    localStorage.setItem("gamePoint", newGamePoint);
+
     dispatch({
       type: "update_game",
       payload: {
@@ -63,7 +68,7 @@ const GameProvider = ({ children }) => {
         status: gameStatus,
         userSelection,
         pcSelection,
-        point: gameStatus === "win" ? state.point + 1 : state.point,
+        point: newGamePoint,
       },
     });
   };
