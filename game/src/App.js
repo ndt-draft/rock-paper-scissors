@@ -1,12 +1,19 @@
 import { StyledApp } from "./App.style";
 
+import GameProvider from "./GameProvider";
 import Header from "./Header";
+import Game from "./Game";
+import TestChangeScreen from "./TestChangeScreen";
 
 function App() {
   return (
     <StyledApp>
       <div className="game-wrapper">
-        <Header />
+        <GameProvider>
+          <Header />
+          <Game />
+          <TestChangeScreen />
+        </GameProvider>
       </div>
     </StyledApp>
   );
