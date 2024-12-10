@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const StyledResult = styled.div`
   display: flex;
-  flex: 50%;
   justify-content: space-between;
   align-items: center;
   max-width: 50%;
   margin: auto;
 
   .choice {
+    flex: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,6 +21,7 @@ export const StyledResult = styled.div`
   }
 
   .status {
+    flex: 1;
     font-size: 32px;
     text-align: center;
   }
