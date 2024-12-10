@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import lodash from "lodash";
-import { useGame } from "../GameProvider";
+import { useGame } from "../../GameProvider";
 import { StyledPCPicked } from "./PCPicked.style";
-import Button from "./Button";
-import { selections } from "./constants";
+import Button from "../Button/Button";
+import { selections } from "../constants";
 
 const PCPicked = () => {
   const { userSelection, pcSelection, changeScreen } = useGame();

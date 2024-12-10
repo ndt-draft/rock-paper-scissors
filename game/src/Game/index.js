@@ -1,8 +1,7 @@
-import { useState } from "react";
-import Menu from "./Menu";
-import UserPicked from "./UserPicked";
-import PCPicked from "./PCPicked";
-import Result from "./Result";
+import Menu from "./Menu/Menu";
+import UserPicked from "./UserPicked/UserPicked";
+import PCPicked from "./PCPicked/PCPicked";
+import Result from "./Result/Result";
 import { useGame } from "../GameProvider";
 
 const Game = () => {
@@ -21,9 +20,9 @@ const Game = () => {
       return <PCPicked />;
     case "result":
       return <Result />;
+    default:
+      return <Menu />;
   }
-
-  return <Menu />;
 };
 
 export default Game;

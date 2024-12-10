@@ -3,7 +3,6 @@ import { StyledApp } from "./App.style";
 import GameProvider from "./GameProvider";
 import Header from "./Header";
 import Game from "./Game";
-import TestChangeScreen from "./TestChangeScreen";
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
         <GameProvider>
           <Header />
           <Game />
-          <TestChangeScreen />
         </GameProvider>
       </div>
     </StyledApp>

@@ -1,8 +1,8 @@
-import { useGame } from "../GameProvider";
+import { useGame } from "../../GameProvider";
 import { StyledResult } from "./Result.style";
-import Button from "./Button";
+import Button from "../Button/Button";
 import lodash from "lodash";
-import { selections } from "./constants";
+import { selections } from "../constants";
 
 const Result = () => {
   const { userSelection, pcSelection, status, changeScreen } = useGame();
