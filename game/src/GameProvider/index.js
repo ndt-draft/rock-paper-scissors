@@ -50,7 +50,13 @@ const GameProvider = ({ children }) => {
   };
 
   const handleUserSelect = (userSelection) => () => {
-    const pcSelection = lodash.sample(["rock", "paper", "scissors"]);
+    const pcSelection = lodash.sample([
+      "rock",
+      "paper",
+      "scissors",
+      "spock",
+      "lizard",
+    ]);
     const isUserWon = lodash.includes(
       winConditions[userSelection],
       pcSelection
@@ -58,7 +64,12 @@ const GameProvider = ({ children }) => {
     const gameStatus =
       userSelection === pcSelection ? "draw" : isUserWon ? "win" : "lose";
 
-    const newGamePoint = gameStatus === "win" ? state.point + 1 : state.point;
+    const newGamePoint =
+      gameStatus === "win"
+        ? state.point + 1
+        : gameStatus === "lose"
+        ? state.point - 1
+        : state.point;
     localStorage.setItem("gamePoint", newGamePoint);
 
     dispatch({
