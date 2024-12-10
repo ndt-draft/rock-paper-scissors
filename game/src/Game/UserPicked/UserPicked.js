@@ -12,7 +12,7 @@ const UserPicked = () => {
     setTimeout(() => {
       changeScreen("pc-picked");
     }, 1000);
-  }, []);
+  }, [changeScreen]);
 
   const userSelectionIcons = lodash.find(selections, { value: userSelection });
 
