@@ -3,6 +3,7 @@ import { StyledApp } from "./App.style";
 import GameProvider from "./GameProvider";
 import Header from "./Header";
 import Game from "./Game";
+import Rules from "./Rules";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Game />
         </GameProvider>
       </div>
+      <Rules />
     </StyledApp>
   );
 }
