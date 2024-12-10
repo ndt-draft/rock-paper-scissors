@@ -37,9 +37,9 @@ export const StyledButton = styled.button`
   cursor: pointer;
   border: 12px solid ${(props) => `${colors[props.value]}`};
   border-radius: 50%;
-  position: absolute;
-  top: ${(props) => `${positions[props.value].top}`};
-  left: ${(props) => `${positions[props.value].left}`};
+  position: ${(props) => (props.type === "preview" ? "initial" : "absolute")};
+  top: ${(props) => `${positions[props.value]?.top}`};
+  left: ${(props) => `${positions[props.value]?.left}`};
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,5 +1,9 @@
 import { useEffect } from "react";
+import lodash from "lodash";
 import { useGame } from "../GameProvider";
+import { StyledUserPicked } from "./UserPicked.style";
+import Button from "./Button";
+import { selections } from "./constants";
 
 const UserPicked = () => {
   const { userSelection, pcSelection, changeScreen } = useGame();
@@ -10,11 +14,23 @@ const UserPicked = () => {
     }, 1000);
   }, []);
 
+  const userSelectionIcons = lodash.find(selections, { value: userSelection });
+
   return (
-    <div>
-      <div>user choose: {userSelection}</div>
-      <div>pc choose: {}</div>
-    </div>
+    <StyledUserPicked>
+      <div className="choice">
+        <div className="heading">YOU PICKED</div>
+        <Button
+          type="preview"
+          value={userSelection}
+          icon={userSelectionIcons?.icon}
+        ></Button>
+      </div>
+      <div className="choice">
+        <div className="heading">THE HOUSE PICKED</div>
+        <Button type="preview" />
+      </div>
+    </StyledUserPicked>
   );
 };
 
