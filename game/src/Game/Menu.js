@@ -1,13 +1,5 @@
-import rockIcon from "../images/icon-rock.svg";
-import paperIcon from "../images/icon-paper.svg";
-import scissorsIcon from "../images/icon-scissors.svg";
 import { useGame } from "../GameProvider";
-
-const selections = [
-  { value: "rock", icon: rockIcon },
-  { value: "paper", icon: paperIcon },
-  { value: "scissors", icon: scissorsIcon },
-];
+import { selections } from "./constants";
 
 const Menu = () => {
   const { handleUserSelect, userSelection, pcSelection, status, point } =

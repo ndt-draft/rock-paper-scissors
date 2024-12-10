@@ -57,6 +57,7 @@ const GameProvider = ({ children }) => {
     dispatch({
       type: "update_game",
       payload: {
+        screen: "user-picked",
         status: gameStatus,
         userSelection,
         pcSelection,
