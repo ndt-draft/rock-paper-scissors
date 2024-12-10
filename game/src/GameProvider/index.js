@@ -17,6 +17,7 @@ function gameReducer(state, action) {
   switch (action.type) {
     case "change_screen":
       return {
+        ...state,
         screen: action.payload,
       };
     case "update_game": {
