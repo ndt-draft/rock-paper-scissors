@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const StyledApp = styled.div`
-  background-color: hsl(214, 47%, 23%);
+  background: linear-gradient(
+    to bottom,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
   color: white;
   min-height: 100vh;
 
