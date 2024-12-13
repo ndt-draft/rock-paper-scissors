@@ -54,7 +54,7 @@ const Selections = ({ pcPicked, result }) => {
           value={userSelection}
           icon={userSelectionIcons?.icon}
           size={300}
-          iconSize={200}
+          iconSize={180}
         ></Selection>
       </div>
       {result && (
@@ -71,7 +71,7 @@ const Selections = ({ pcPicked, result }) => {
           value={pcSelection}
           icon={pcSelectionIcons?.icon}
           size={300}
-          iconSize={200}
+          iconSize={180}
         />
       </div>
     </StyledSelections>

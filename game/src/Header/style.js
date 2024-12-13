@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  border: 2px solid hsl(217, 16%, 45%);
+  max-width: 960px;
+  margin: auto;
   margin-bottom: 30px;
+  margin-top: 20px;
   padding: 20px;
+  border: 2px solid hsl(217, 16%, 45%);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
