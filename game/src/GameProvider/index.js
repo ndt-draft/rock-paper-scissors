@@ -107,7 +107,10 @@ const GameProvider = ({ children }) => {
   const playAgain = () => {
     dispatch({
       type: "update_game",
-      payload: initialState,
+      payload: {
+        ...initialState,
+        point: state.point, // keep the point
+      },
     });
   };
 
