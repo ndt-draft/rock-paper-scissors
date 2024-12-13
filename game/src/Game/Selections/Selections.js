@@ -29,7 +29,7 @@ const Selections = ({ pcPicked, result }) => {
         handlePcSelect();
       }, 1000);
     }
-  }, [pcPicked, pcSelection, changeScreen, handlePcSelect]);
+  }, [pcPicked, pcSelection, changeScreen, handlePcSelect, result]);
 
   useEffect(() => {
     if (result) {
