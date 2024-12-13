@@ -13,6 +13,7 @@ const Selections = ({ pcPicked, result }) => {
     handlePcSelect,
     status,
     playAgain,
+    handleResult,
   } = useGame();
 
   useEffect(() => {
@@ -42,6 +43,12 @@ const Selections = ({ pcPicked, result }) => {
       }, 1000);
     }
   }, [pcPicked, pcSelection, result, changeScreen]);
+
+  useEffect(() => {
+    if (result) {
+      handleResult();
+    }
+  }, [result]);
 
   const userSelectionIcons = lodash.find(selections, { value: userSelection });
   const pcSelectionIcons = lodash.find(selections, { value: pcSelection });
