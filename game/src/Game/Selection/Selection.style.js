@@ -35,7 +35,10 @@ export const StyledSelection = styled.div`
   width: ${(props) => props.$size || 100}px;
   height: ${(props) => props.$size || 100}px;
   cursor: pointer;
-  background: linear-gradient(${(props) => `${bgColors[props.$value]}`});
+  background: ${(props) =>
+    props.$value
+      ? `linear-gradient(${bgColors[props.$value]})`
+      : `hsl(237, 49%, 15%)`};
   border-radius: 50%;
   position: ${(props) => props.$position || "initial"};
   ${(props) =>
@@ -49,6 +52,13 @@ export const StyledSelection = styled.div`
   align-items: center;
 
   .selection-inner {
+    background: ${(props) => (props.$value ? "white" : "transparent")};
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   img {
