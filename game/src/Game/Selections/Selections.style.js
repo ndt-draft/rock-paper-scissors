@@ -22,17 +22,18 @@ export const StyledSelections = styled.div`
 
   .status {
     flex: 1;
-    font-size: 32px;
+    font-size: 48px;
     text-align: center;
     font-weight: 700;
   }
 
   .play-again {
     background-color: white;
-    padding: 8px 20px;
+    padding: 8px 40px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
+    font-size: 18px;
   }
 
   .mobile-status {
