@@ -1,9 +1,10 @@
 import { StyledSelection } from "./Selection.style";
 
-const Selection = ({ icon, value, onSelect, size, iconSize }) => {
+const Selection = ({ icon, value, onSelect, size, iconSize, menu }) => {
   return (
     <StyledSelection
       onClick={onSelect}
+      $menu={menu}
       $value={value}
       $size={size}
       $iconSize={iconSize}

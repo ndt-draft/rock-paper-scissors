@@ -48,6 +48,7 @@ const Selections = ({ pcPicked, result }) => {
     if (result) {
       handleResult();
     }
+    // eslint-disable-next-line
   }, [result]);
 
   const userSelectionIcons = lodash.find(selections, { value: userSelection });

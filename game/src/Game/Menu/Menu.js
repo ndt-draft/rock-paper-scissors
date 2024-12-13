@@ -1,7 +1,7 @@
 import { useGame } from "../../GameProvider";
 import { selections } from "../constants";
 import { StyledMenu } from "./Menu.style";
-import Button from "../Button/Button";
+import Selection from "../Selection/Selection";
 
 const Menu = () => {
   const { handleUserSelect } = useGame();
@@ -9,10 +9,11 @@ const Menu = () => {
   return (
     <StyledMenu>
       {selections.map((selection) => (
-        <Button
+        <Selection
           key={selection.value}
           {...selection}
           onSelect={handleUserSelect(selection.value)}
+          menu
         />
       ))}
     </StyledMenu>

@@ -40,13 +40,9 @@ export const StyledSelection = styled.div`
       ? `linear-gradient(${bgColors[props.$value]})`
       : `hsl(237, 49%, 15%)`};
   border-radius: 50%;
-  position: ${(props) => props.$position || "initial"};
-  ${(props) =>
-    props.$position === "absolute" &&
-    `
-    top: ${(props) => `${positions[props.$value]?.top}`};
-    left: ${(props) => `${positions[props.$value]?.left}`};
-  `}
+  position: ${(props) => (props.$menu ? "absolute" : "initial")};
+  top: ${(props) => `${positions[props.$value]?.top}`};
+  left: ${(props) => `${positions[props.$value]?.left}`};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,8 +50,8 @@ export const StyledSelection = styled.div`
   .selection-inner {
     background: ${(props) => (props.$value ? "white" : "transparent")};
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: ${(props) => (props.$size ? props.$size - 50 : 80)}px;
+    height: ${(props) => (props.$size ? props.$size - 50 : 80)}px;
     display: flex;
     justify-content: center;
     align-items: center;
