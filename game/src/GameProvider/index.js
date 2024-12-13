@@ -104,11 +104,19 @@ const GameProvider = ({ children }) => {
     });
   };
 
+  const playAgain = () => {
+    dispatch({
+      type: "update_game",
+      payload: initialState,
+    });
+  };
+
   const actions = {
     changeScreen,
     handleUserSelect,
     handlePcSelect,
     handleResult,
+    playAgain,
   };
 
   return (

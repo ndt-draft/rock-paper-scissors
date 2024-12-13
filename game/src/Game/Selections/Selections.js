@@ -1,48 +1,57 @@
 import { useEffect } from "react";
 import lodash from "lodash";
 import { useGame } from "../../GameProvider";
-import { StyledPCPicked } from "./PCPicked.style";
-import Button from "../Button/Button";
+import { StyledSelections } from "./Selections.style";
+import Selection from "../Selection/Selection";
 import { selections } from "../constants";
 
-const PCPicked = () => {
+const Selections = ({ pcPicked }) => {
   const { userSelection, pcSelection, changeScreen, handlePcSelect } =
     useGame();
 
   useEffect(() => {
-    handlePcSelect();
-    // eslint-disable-next-line
-  }, []);
+    setTimeout(() => {
+      if (!pcPicked) {
+        changeScreen("pc-picked");
+      } else if (!pcSelection) {
+        handlePcSelect();
+      }
+    }, 1000);
+  }, [pcPicked, pcSelection, changeScreen, handlePcSelect]);
 
   useEffect(() => {
-    setTimeout(() => {
-      changeScreen("result");
-    }, 1000);
-  }, [changeScreen]);
+    if (pcPicked && pcSelection) {
+      setTimeout(() => {
+        changeScreen("result");
+      }, 1000);
+    }
+  }, [pcPicked, pcSelection, changeScreen]);
 
   const userSelectionIcons = lodash.find(selections, { value: userSelection });
   const pcSelectionIcons = lodash.find(selections, { value: pcSelection });
 
   return (
-    <StyledPCPicked>
+    <StyledSelections>
       <div className="choice">
         <div className="heading">YOU PICKED</div>
-        <Button
-          type="preview"
+        <Selection
           value={userSelection}
           icon={userSelectionIcons?.icon}
-        ></Button>
+          size={300}
+          iconSize={200}
+        ></Selection>
       </div>
       <div className="choice">
         <div className="heading">THE HOUSE PICKED</div>
-        <Button
-          type="preview"
+        <Selection
           value={pcSelection}
           icon={pcSelectionIcons?.icon}
+          size={300}
+          iconSize={200}
         />
       </div>
-    </StyledPCPicked>
+    </StyledSelections>
   );
 };
 
-export default PCPicked;
+export default Selections;

@@ -6,7 +6,7 @@ import { selections } from "../constants";
 import { useEffect } from "react";
 
 const Result = () => {
-  const { userSelection, pcSelection, status, changeScreen, handleResult } =
+  const { userSelection, pcSelection, status, playAgain, handleResult } =
     useGame();
 
   const userSelectionIcons = lodash.find(selections, { value: userSelection });
@@ -29,7 +29,7 @@ const Result = () => {
       </div>
       <div className="status">
         <div className="game-status">YOU {lodash.toUpper(status)}</div>
-        <button className="play-again" onClick={() => changeScreen("menu")}>
+        <button className="play-again" onClick={playAgain}>
           PLAY AGAIN
         </button>
       </div>
