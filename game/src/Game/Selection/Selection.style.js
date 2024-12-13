@@ -31,6 +31,29 @@ const positions = {
   },
 };
 
+const mobilePositions = {
+  rock: {
+    top: `250px`,
+    left: `180px`,
+  },
+  paper: {
+    top: `100px`,
+    left: `220px`,
+  },
+  scissors: {
+    top: `0`,
+    left: `100px`,
+  },
+  spock: {
+    top: `100px`,
+    left: `-20px`,
+  },
+  lizard: {
+    top: `250px`,
+    left: `20px`,
+  },
+};
+
 export const StyledSelection = styled.div`
   width: ${(props) => props.$size || 100}px;
   height: ${(props) => props.$size || 100}px;
@@ -59,5 +82,21 @@ export const StyledSelection = styled.div`
 
   img {
     height: ${(props) => (props.$iconSize ? props.$iconSize : 40)}px;
+  }
+
+  @media (max-width: 576px) {
+    width: 100px;
+    height: 100px;
+    top: ${(props) => `${mobilePositions[props.$value]?.top}`};
+    left: ${(props) => `${mobilePositions[props.$value]?.left}`};
+
+    .selection-inner {
+      width: 80px;
+      height: 80px;
+    }
+
+    img {
+      max-height: 40px;
+    }
   }
 `;

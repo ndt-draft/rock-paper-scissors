@@ -13,4 +13,17 @@ export const StyledRules = styled.div`
     padding: 4px 12px;
     border-radius: 4px;
   }
+
+  @media (max-width: 576px) {
+    right: 0;
+    bottom: 60px;
+    width: 100%;
+    text-align: center;
+
+    button {
+      padding: 8px 32px;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  }
 `;

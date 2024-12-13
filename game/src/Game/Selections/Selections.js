@@ -82,6 +82,14 @@ const Selections = ({ pcPicked, result }) => {
           iconSize={180}
         />
       </div>
+      {result && (
+        <div className="mobile-status">
+          <div className="game-status">YOU {lodash.toUpper(status)}</div>
+          <button className="play-again" onClick={playAgain}>
+            PLAY AGAIN
+          </button>
+        </div>
+      )}
     </StyledSelections>
   );
 };
