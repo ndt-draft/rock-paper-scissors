@@ -32,17 +32,17 @@ const positions = {
 };
 
 export const StyledSelection = styled.div`
-  width: ${(props) => props.size || 100}px;
-  height: ${(props) => props.size || 100}px;
+  width: ${(props) => props.$size || 100}px;
+  height: ${(props) => props.$size || 100}px;
   cursor: pointer;
-  background: linear-gradient(${(props) => `${bgColors[props.value]}`});
+  background: linear-gradient(${(props) => `${bgColors[props.$value]}`});
   border-radius: 50%;
-  position: ${(props) => props.position || "initial"};
+  position: ${(props) => props.$position || "initial"};
   ${(props) =>
-    props.position === "absolute" &&
+    props.$position === "absolute" &&
     `
-    top: ${(props) => `${positions[props.value]?.top}`};
-    left: ${(props) => `${positions[props.value]?.left}`};
+    top: ${(props) => `${positions[props.$value]?.top}`};
+    left: ${(props) => `${positions[props.$value]?.left}`};
   `}
   display: flex;
   justify-content: center;
@@ -52,6 +52,6 @@ export const StyledSelection = styled.div`
   }
 
   img {
-    height: ${(props) => (props.iconSize ? props.iconSize : 40)}px;
+    height: ${(props) => (props.$iconSize ? props.$iconSize : 40)}px;
   }
 `;

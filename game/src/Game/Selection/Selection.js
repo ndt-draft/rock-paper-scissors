@@ -4,9 +4,9 @@ const Selection = ({ icon, value, onSelect, size, iconSize }) => {
   return (
     <StyledSelection
       onClick={onSelect}
-      value={value}
-      size={size}
-      iconSize={iconSize}
+      $value={value}
+      $size={size}
+      $iconSize={iconSize}
     >
       <div className="selection-inner">
         <img src={icon} alt={value} />
