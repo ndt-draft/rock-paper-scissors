@@ -29,15 +29,22 @@ export const StyledSelections = styled.div`
 
   .play-again {
     background-color: white;
-    padding: 8px 40px;
+    padding: 8px 60px;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 700;
     font-size: 18px;
+    font-weight: 600;
+    color: hsl(229, 25%, 31%);
   }
 
   .mobile-status {
     display: none;
+    flex: 100%;
+    font-size: 64px;
+    line-height: 64px;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 700;
   }
 
   @media (max-width: 576px) {
@@ -48,20 +55,14 @@ export const StyledSelections = styled.div`
     }
 
     .mobile-status {
-      flex: 100%;
       display: block;
-      font-size: 64px;
-      text-align: center;
-      margin-top: 50px;
-      font-weight: 700;
     }
 
     .play-again {
       background-color: white;
-      padding: 8px 32px;
+      padding: 8px 60px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 32px;
     }
   }
 `;

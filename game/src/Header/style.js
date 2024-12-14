@@ -23,7 +23,7 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledPoint = styled.div`
-  width: 200px;
+  width: 150px;
   text-align: center;
   background-color: white;
   display: flex;
@@ -32,9 +32,11 @@ export const StyledPoint = styled.div`
   flex-direction: column;
   color: hsl(229, 64%, 46%);
   border-radius: 12px;
+  padding: 16px;
 
   @media (max-width: 576px) {
-    width: 150px;
+    width: 100px;
+    padding: 8px;
   }
 
   .score {
@@ -43,6 +45,6 @@ export const StyledPoint = styled.div`
 
   .score-point {
     color: hsl(229, 25%, 31%);
-    font-size: 32px;
+    font-size: 64px;
   }
 `;

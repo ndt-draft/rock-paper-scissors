@@ -85,18 +85,18 @@ export const StyledSelection = styled.div`
   }
 
   @media (max-width: 576px) {
-    width: 100px;
-    height: 100px;
+    width: ${(props) => props.$mobileSize || 100}px;
+    height: ${(props) => props.$mobileSize || 100}px;
     top: ${(props) => `${mobilePositions[props.$value]?.top}`};
     left: ${(props) => `${mobilePositions[props.$value]?.left}`};
 
     .selection-inner {
-      width: 80px;
-      height: 80px;
+      width: ${(props) => props.$mobileSize - 30 || 80}px;
+      height: ${(props) => props.$mobileSize - 30 || 80}px;
     }
 
     img {
-      max-height: 40px;
+      max-height: ${(props) => props.$mobileIconSize || 40}px;
     }
   }
 `;

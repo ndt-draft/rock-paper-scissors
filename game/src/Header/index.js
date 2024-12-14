@@ -9,7 +9,7 @@ const Header = () => {
       <img src={logo} alt="logo" />
 
       <StyledPoint>
-        <div className="score">Score</div>
+        <div className="score">SCORE</div>
         <div className="score-point">{point}</div>
       </StyledPoint>
     </StyledHeader>

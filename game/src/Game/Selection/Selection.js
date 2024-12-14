@@ -1,6 +1,15 @@
 import { StyledSelection } from "./Selection.style";
 
-const Selection = ({ icon, value, onSelect, size, iconSize, menu }) => {
+const Selection = ({
+  icon,
+  value,
+  onSelect,
+  size,
+  iconSize,
+  menu,
+  mobileSize,
+  mobileIconSize,
+}) => {
   return (
     <StyledSelection
       onClick={onSelect}
@@ -8,6 +17,8 @@ const Selection = ({ icon, value, onSelect, size, iconSize, menu }) => {
       $value={value}
       $size={size}
       $iconSize={iconSize}
+      $mobileSize={mobileSize}
+      $mobileIconSize={mobileIconSize}
     >
       <div className="selection-inner">
         <img src={icon} alt={value} />

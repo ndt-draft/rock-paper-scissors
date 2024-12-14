@@ -63,6 +63,8 @@ const Selections = ({ pcPicked, result }) => {
           icon={userSelectionIcons?.icon}
           size={300}
           iconSize={180}
+          mobileSize={140}
+          mobileIconSize={60}
         ></Selection>
       </div>
       {result && (
@@ -80,6 +82,8 @@ const Selections = ({ pcPicked, result }) => {
           icon={pcSelectionIcons?.icon}
           size={300}
           iconSize={180}
+          mobileSize={140}
+          mobileIconSize={60}
         />
       </div>
       {result && (
