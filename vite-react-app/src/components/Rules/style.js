@@ -7,12 +7,13 @@ export const StyledRules = styled.div`
   right: 20px;
 
   button {
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
+    border: 1px solid ${(props) => props.theme.buttonBg};
+    background-color: ${(props) => props.theme.buttonBg};
+    color: ${(props) => props.theme.buttonText};
     cursor: pointer;
     padding: 4px 12px;
     border-radius: 4px;
+    font-weight: 600;
   }
 
   @media (max-width: ${breakPoints.mobile}) {

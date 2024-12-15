@@ -2,13 +2,12 @@ import GameProvider from "@components/GameProvider";
 import Header from "@components/Header";
 import Game from "@components/Game";
 import Rules from "@components/Rules";
-import { ThemeProvider } from "styled-components";
-import themes from "@/constants/themes";
+import ThemeProvider from "@components/ThemeProvider";
 import { StyledApp } from "./App.style";
 
 function App() {
   return (
-    <ThemeProvider theme={themes.dark}>
+    <ThemeProvider>
       <StyledApp>
         <GameProvider>
           <Header />

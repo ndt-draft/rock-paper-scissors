@@ -4,14 +4,17 @@ import breakPoints from "@/constants/breakPoints";
 export const StyledHeader = styled.div`
   max-width: 960px;
   margin: auto;
+  margin-bottom: 20px;
   padding: 20px;
   border: 2px solid ${(props) => props.theme.headerOutline};
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
+  background-color: ${(props) => props.theme.headerBg};
 
   @media (max-width: ${breakPoints.tablet}) {
-    margin: 0 20px 20px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   @media (max-width: ${breakPoints.mobile}) {

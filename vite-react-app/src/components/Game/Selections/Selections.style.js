@@ -29,13 +29,13 @@ export const StyledSelections = styled.div`
   }
 
   .play-again {
-    background-color: white;
+    background-color: ${(props) => props.theme.buttonBg};
     padding: 8px 60px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
-    color: ${(props) => props.theme.scoreText};
+    color: ${(props) => props.theme.buttonText};
   }
 
   .mobile-status {
@@ -60,7 +60,7 @@ export const StyledSelections = styled.div`
     }
 
     .play-again {
-      background-color: white;
+      background-color: ${(props) => props.theme.buttonBg};
       padding: 8px 60px;
       border-radius: 8px;
       cursor: pointer;
