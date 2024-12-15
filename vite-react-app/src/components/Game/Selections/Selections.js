@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import lodash from "lodash";
-import { useGame } from "../../GameProvider";
+import { useGame } from "@components/GameProvider";
 import { StyledSelections } from "./Selections.style";
-import Selection from "../Selection/Selection";
-import { selections } from "../constants";
+import Selection from "@components/Game/Selection/Selection";
+import { selections } from "@components/Game/constants";
 
 const Selections = ({ pcPicked, result }) => {
   const {

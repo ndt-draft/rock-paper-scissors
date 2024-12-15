@@ -1,6 +1,6 @@
 import Menu from "./Menu/Menu";
 import Selections from "./Selections/Selections";
-import { useGame } from "../GameProvider";
+import { useGame } from "@components/GameProvider";
 
 const Game = () => {
   // step 1: menu

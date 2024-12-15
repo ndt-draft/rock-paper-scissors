@@ -1,6 +1,6 @@
-import logo from "../images/logo-bonus.svg";
+import logo from "@images/logo-bonus.svg";
 import { StyledHeader, StyledPoint } from "./style";
-import { useGame } from "../GameProvider";
+import { useGame } from "@components/GameProvider";
 
 const Header = () => {
   const { point } = useGame();

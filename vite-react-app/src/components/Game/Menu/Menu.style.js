@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import pentagon from "../../images/bg-pentagon.svg";
+import pentagon from "@images/bg-pentagon.svg";
 
 export const StyledMenu = styled.div`
   max-width: 500px;

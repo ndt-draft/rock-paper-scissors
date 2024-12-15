@@ -1,7 +1,7 @@
-import { useGame } from "../../GameProvider";
-import { selections } from "../constants";
+import { useGame } from "@components/GameProvider";
+import { selections } from "@components/Game/constants";
 import { StyledMenu } from "./Menu.style";
-import Selection from "../Selection/Selection";
+import Selection from "@components/Game/Selection/Selection";
 
 const Menu = () => {
   const { handleUserSelect } = useGame();

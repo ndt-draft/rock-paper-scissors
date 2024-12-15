@@ -1,5 +1,5 @@
 import Modal from "react-modal";
-import ruleImage from "../images/image-rules-bonus.svg";
+import ruleImage from "@images/image-rules-bonus.svg";
 import { useState } from "react";
 import { StyledRules } from "./style";
 

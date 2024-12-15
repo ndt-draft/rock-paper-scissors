@@ -1,7 +1,7 @@
-import GameProvider from "./GameProvider";
-import Header from "./Header";
-import Game from "./Game";
-import Rules from "./Rules";
+import GameProvider from "@components/GameProvider";
+import Header from "@components/Header";
+import Game from "@components/Game";
+import Rules from "@components/Rules";
 
 function App() {
   return (
