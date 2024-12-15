@@ -1,5 +1,5 @@
 import { useGame } from "@components/GameProvider";
-import { selections } from "@components/Game/constants";
+import { selections } from "@/constants/selections";
 import { StyledMenu } from "./Menu.style";
 import Selection from "@components/Game/Selection/Selection";
 

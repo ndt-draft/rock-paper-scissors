@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakPoints from "@/constants/breakPoints";
 
 const bgColors = {
   rock: `hsl(349, 71%, 52%), hsl(349, 70%, 56%)`,
@@ -84,7 +85,7 @@ export const StyledSelection = styled.div`
     height: ${(props) => (props.$iconSize ? props.$iconSize : 40)}px;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: ${breakPoints.mobile}) {
     width: ${(props) => props.$mobileSize || 100}px;
     height: ${(props) => props.$mobileSize || 100}px;
     top: ${(props) => `${mobilePositions[props.$value]?.top}`};

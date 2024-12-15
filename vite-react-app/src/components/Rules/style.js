@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakPoints from "@/constants/breakPoints";
 
 export const StyledRules = styled.div`
   position: fixed;
@@ -14,7 +15,7 @@ export const StyledRules = styled.div`
     border-radius: 4px;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: ${breakPoints.mobile}) {
     right: 0;
     bottom: 60px;
     width: 100%;
@@ -35,7 +36,7 @@ export const ModalHeading = styled.h1`
   margin-bottom: 100px;
   display: none;
 
-  @media (max-width: 576px) {
+  @media (max-width: ${breakPoints.mobile}) {
     display: block;
   }
 `;
@@ -47,7 +48,7 @@ export const ModalClose = styled.div`
   margin-top: 100px;
   display: none;
 
-  @media (max-width: 576px) {
+  @media (max-width: ${breakPoints.mobile}) {
     display: block;
   }
 `;

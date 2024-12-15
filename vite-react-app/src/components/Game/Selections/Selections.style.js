@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakPoints from "@/constants/breakPoints";
 
 export const StyledSelections = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ export const StyledSelections = styled.div`
     font-weight: 700;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: ${breakPoints.mobile}) {
     flex-wrap: wrap;
 
     .status {

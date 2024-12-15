@@ -3,7 +3,7 @@ import lodash from "lodash";
 import { useGame } from "@components/GameProvider";
 import { StyledSelections } from "./Selections.style";
 import Selection from "@components/Game/Selection/Selection";
-import { selections } from "@components/Game/constants";
+import { selections } from "@/constants/selections";
 
 const Selections = ({ pcPicked, result }) => {
   const {

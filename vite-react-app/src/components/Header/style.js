@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakPoints from "@/constants/breakPoints";
 
 export const StyledHeader = styled.div`
   max-width: 960px;
@@ -10,11 +11,11 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
   color: hsl(229, 25%, 31%);
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${breakPoints.tablet}) {
     margin: 20px;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: ${breakPoints.mobile}) {
     img {
       max-width: 80px;
       padding: 16px;
@@ -34,7 +35,7 @@ export const StyledPoint = styled.div`
   border-radius: 12px;
   padding: 16px;
 
-  @media (max-width: 576px) {
+  @media (max-width: ${breakPoints.mobile}) {
     width: 100px;
     padding: 8px;
   }
