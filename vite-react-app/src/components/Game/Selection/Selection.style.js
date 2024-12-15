@@ -62,7 +62,7 @@ export const StyledSelection = styled.div`
   background: ${(props) =>
     props.$value
       ? `linear-gradient(${bgColors[props.$value]})`
-      : `hsl(237, 49%, 15%)`};
+      : props.theme.bodyBg2};
   border-radius: 50%;
   position: ${(props) => (props.$menu ? "absolute" : "initial")};
   top: ${(props) => `${positions[props.$value]?.top}`};

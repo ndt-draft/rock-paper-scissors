@@ -35,7 +35,7 @@ export const StyledSelections = styled.div`
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
-    color: hsl(229, 25%, 31%);
+    color: ${(props) => props.theme.scoreText};
   }
 
   .mobile-status {

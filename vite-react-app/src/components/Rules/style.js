@@ -30,7 +30,7 @@ export const StyledRules = styled.div`
 `;
 
 export const ModalHeading = styled.h1`
-  color: hsl(229, 25%, 31%);
+  color: ${(props) => props.theme.darkText};
   text-align: center;
   margin: 0;
   margin-bottom: 100px;
@@ -42,7 +42,6 @@ export const ModalHeading = styled.h1`
 `;
 
 export const ModalClose = styled.div`
-  color: hsl(229, 25%, 31%);
   text-align: center;
   cursor: pointer;
   margin-top: 100px;
