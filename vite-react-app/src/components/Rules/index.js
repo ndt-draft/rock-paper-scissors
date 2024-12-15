@@ -1,12 +1,11 @@
 import Modal from "react-modal";
 import ruleImage from "@images/image-rules-bonus.svg";
+import closeImage from "@images/icon-close.svg";
 import { useState } from "react";
-import { StyledRules } from "./style";
+import { StyledRules, ModalHeading, ModalClose } from "./style";
+import useIsMobile from "@/hooks/useIsMobile";
 
-const customStyles = {
-  overlay: {
-    background: "rgba(0, 0, 0, 0.6)",
-  },
+const defaultStyles = {
   content: {
     top: "50%",
     left: "50%",
@@ -19,6 +18,17 @@ const customStyles = {
 
 const Rules = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
+
+  const isMobile = useIsMobile();
+  const dynamicStyles = {
+    overlay: {
+      background: isMobile ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 0.6)",
+    },
+    content: {
+      ...defaultStyles.content,
+      border: "none",
+    },
+  };
 
   function openModal() {
     setIsOpen(true);
@@ -34,9 +44,14 @@ const Rules = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={dynamicStyles}
+        contentLabel="Rules"
       >
+        <ModalHeading>RULES</ModalHeading>
         <img src={ruleImage} alt="rules" />
+        <ModalClose onClick={closeModal}>
+          <img src={closeImage} alt="close" />
+        </ModalClose>
       </Modal>
     </StyledRules>
   );
