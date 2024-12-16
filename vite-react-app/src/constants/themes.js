@@ -19,6 +19,7 @@ const defaultColors = {
   contentText: "white",
   buttonBg: "white",
   buttonText: "hsl(229, 25%, 31%)",
+  buttonOutlineText: "white",
 };
 
 const themes = {
@@ -30,6 +31,7 @@ const themes = {
     contentText: "hsl(229, 25%, 31%)",
     buttonBg: "hsl(229, 25%, 31%)",
     buttonText: "white",
+    buttonOutlineText: "hsl(229, 25%, 31%)",
     headerOutline: "hsl(214, 47%, 23%)",
     headerBg: "hsl(214, 47%, 23%)",
     bodyBg1: "#eee",

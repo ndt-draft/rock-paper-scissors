@@ -7,9 +7,9 @@ export const StyledRules = styled.div`
   right: 20px;
 
   button {
-    border: 1px solid ${(props) => props.theme.buttonBg};
-    background-color: ${(props) => props.theme.buttonBg};
-    color: ${(props) => props.theme.buttonText};
+    border: 1px solid ${(props) => props.theme.buttonOutlineText};
+    background-color: transparent;
+    color: ${(props) => props.theme.buttonOutlineText};
     cursor: pointer;
     padding: 4px 12px;
     border-radius: 4px;
