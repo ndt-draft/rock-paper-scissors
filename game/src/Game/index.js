@@ -1,0 +1,28 @@
+import Menu from "./Menu/Menu";
+import UserPicked from "./UserPicked/UserPicked";
+import PCPicked from "./PCPicked/PCPicked";
+import Result from "./Result/Result";
+import { useGame } from "../GameProvider";
+
+const Game = () => {
+  // step 1: menu
+  // step 2: show user picked item
+  // step 3: show pc picked item
+  // step 4: show result
+  const { screen } = useGame();
+
+  switch (screen) {
+    case "menu":
+      return <Menu />;
+    case "user-picked":
+      return <UserPicked />;
+    case "pc-picked":
+      return <PCPicked />;
+    case "result":
+      return <Result />;
+    default:
+      return <Menu />;
+  }
+};
+
+export default Game;
