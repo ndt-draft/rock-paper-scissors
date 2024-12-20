@@ -1,7 +1,5 @@
 import Menu from "./Menu/Menu";
-import UserPicked from "./UserPicked/UserPicked";
-import PCPicked from "./PCPicked/PCPicked";
-import Result from "./Result/Result";
+import Selections from "./Selections/Selections";
 import { useGame } from "../GameProvider";
 
 const Game = () => {
@@ -15,11 +13,11 @@ const Game = () => {
     case "menu":
       return <Menu />;
     case "user-picked":
-      return <UserPicked />;
+      return <Selections />;
     case "pc-picked":
-      return <PCPicked />;
+      return <Selections pcPicked />;
     case "result":
-      return <Result />;
+      return <Selections result />;
     default:
       return <Menu />;
   }

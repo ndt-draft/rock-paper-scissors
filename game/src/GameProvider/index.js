@@ -50,25 +50,66 @@ const GameProvider = ({ children }) => {
   };
 
   const handleUserSelect = (userSelection) => () => {
-    const pcSelection = lodash.sample(["rock", "paper", "scissors"]);
+    dispatch({
+      type: "update_game",
+      payload: {
+        screen: "user-picked",
+        userSelection,
+      },
+    });
+  };
+
+  const handlePcSelect = () => {
+    const pcSelection = lodash.sample([
+      "rock",
+      "paper",
+      "scissors",
+      "spock",
+      "lizard",
+    ]);
+
+    dispatch({
+      type: "update_game",
+      payload: {
+        pcSelection,
+      },
+    });
+  };
+
+  const handleResult = () => {
     const isUserWon = lodash.includes(
-      winConditions[userSelection],
-      pcSelection
+      winConditions[state.userSelection],
+      state.pcSelection
     );
     const gameStatus =
-      userSelection === pcSelection ? "draw" : isUserWon ? "win" : "lose";
-
-    const newGamePoint = gameStatus === "win" ? state.point + 1 : state.point;
+      state.userSelection === state.pcSelection
+        ? "draw"
+        : isUserWon
+        ? "win"
+        : "lose";
+    const newGamePoint =
+      gameStatus === "win"
+        ? state.point + 1
+        : gameStatus === "lose"
+        ? state.point - 1
+        : state.point;
     localStorage.setItem("gamePoint", newGamePoint);
 
     dispatch({
       type: "update_game",
       payload: {
-        screen: "user-picked",
         status: gameStatus,
-        userSelection,
-        pcSelection,
         point: newGamePoint,
+      },
+    });
+  };
+
+  const playAgain = () => {
+    dispatch({
+      type: "update_game",
+      payload: {
+        ...initialState,
+        point: state.point, // keep the point
       },
     });
   };
@@ -76,6 +117,9 @@ const GameProvider = ({ children }) => {
   const actions = {
     changeScreen,
     handleUserSelect,
+    handlePcSelect,
+    handleResult,
+    playAgain,
   };
 
   return (
