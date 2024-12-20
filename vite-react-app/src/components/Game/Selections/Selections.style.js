@@ -2,17 +2,28 @@ import styled from "styled-components";
 import breakPoints from "@/constants/breakPoints";
 
 export const StyledSelections = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
+  display: grid;
+  gap: 16px; /* Add space between columns and rows */
 
-  .choice {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: auto; /* Automatically adjust row heights */
+  align-items: center; /* Center align items vertically if needed */
+
+  .choice,
+  .status {
+    text-align: center; /* Optional, for centering content */
+  }
+
+  .choice:nth-child(1) {
+    grid-column: 1; /* First column */
+  }
+
+  .status {
+    grid-column: 2; /* Second column */
+  }
+
+  .choice:nth-child(3) {
+    grid-column: 3; /* Third column */
   }
 
   .heading {
@@ -22,9 +33,7 @@ export const StyledSelections = styled.div`
   }
 
   .status {
-    flex: 1;
     font-size: 48px;
-    text-align: center;
     font-weight: 700;
   }
 
@@ -38,25 +47,27 @@ export const StyledSelections = styled.div`
     color: ${(props) => props.theme.buttonText};
   }
 
-  .mobile-status {
-    display: none;
-    flex: 100%;
-    font-size: 64px;
-    line-height: 64px;
-    text-align: center;
-    margin-top: 50px;
-    font-weight: 700;
-  }
-
   @media (max-width: ${breakPoints.mobile}) {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns for "choice" */
+    grid-template-rows: auto auto; /* Add extra rows */
 
-    .status {
-      display: none;
+    .choice:nth-child(1) {
+      grid-column: 1;
     }
 
-    .mobile-status {
-      display: block;
+    .choice:nth-child(3) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .status {
+      grid-column: 1 / -1; /* Full width */
+    }
+
+    .status {
+      font-size: 64px;
+      line-height: 64px;
+      margin-top: 50px;
     }
 
     .play-again {

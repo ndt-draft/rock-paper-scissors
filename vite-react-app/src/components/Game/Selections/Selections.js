@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import lodash from "lodash";
 import { useGame } from "@components/GameProvider";
+import Status from "./Status";
 import { StyledSelections } from "./Selections.style";
 import Selection from "@components/Game/Selection/Selection";
 import { selections } from "@/constants/selections";
@@ -11,8 +12,6 @@ const Selections = ({ pcPicked, result }) => {
     pcSelection,
     changeScreen,
     handlePcSelect,
-    status,
-    playAgain,
     handleResult,
   } = useGame();
 
@@ -24,11 +23,11 @@ const Selections = ({ pcPicked, result }) => {
     if (!pcPicked) {
       setTimeout(() => {
         changeScreen("pc-picked");
-      }, 1000);
+      }, 400);
     } else if (!pcSelection) {
       setTimeout(() => {
         handlePcSelect();
-      }, 1000);
+      }, 400);
     }
   }, [pcPicked, pcSelection, changeScreen, handlePcSelect, result]);
 
@@ -40,7 +39,7 @@ const Selections = ({ pcPicked, result }) => {
     if (pcPicked && pcSelection) {
       setTimeout(() => {
         changeScreen("result");
-      }, 1000);
+      }, 400);
     }
   }, [pcPicked, pcSelection, result, changeScreen]);
 
@@ -67,14 +66,7 @@ const Selections = ({ pcPicked, result }) => {
           mobileIconSize={60}
         ></Selection>
       </div>
-      {result && (
-        <div className="status">
-          <div className="game-status">YOU {lodash.toUpper(status)}</div>
-          <button className="play-again" onClick={playAgain}>
-            PLAY AGAIN
-          </button>
-        </div>
-      )}
+      <Status />
       <div className="choice">
         <div className="heading">THE HOUSE PICKED</div>
         <Selection
@@ -86,14 +78,6 @@ const Selections = ({ pcPicked, result }) => {
           mobileIconSize={60}
         />
       </div>
-      {result && (
-        <div className="mobile-status">
-          <div className="game-status">YOU {lodash.toUpper(status)}</div>
-          <button className="play-again" onClick={playAgain}>
-            PLAY AGAIN
-          </button>
-        </div>
-      )}
     </StyledSelections>
   );
 };

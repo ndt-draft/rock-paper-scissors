@@ -67,7 +67,7 @@ export const StyledSelection = styled.div`
   position: ${(props) => (props.$menu ? "absolute" : "initial")};
   top: ${(props) => `${positions[props.$value]?.top}`};
   left: ${(props) => `${positions[props.$value]?.left}`};
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 
