@@ -32,23 +32,24 @@ export const StyledRules = styled.div`
 
 export const ModalHeading = styled.h1`
   color: ${(props) => props.theme.darkText};
-  text-align: center;
   margin: 0;
-  margin-bottom: 100px;
-  display: none;
+  margin-bottom: 20px;
 
   @media (max-width: ${breakPoints.mobile}) {
-    display: block;
+    margin-bottom: 100px;
+    text-align: center;
   }
 `;
 
 export const ModalClose = styled.div`
-  text-align: center;
+  position: absolute;
+  right: 20px;
+  top: 28px;
   cursor: pointer;
-  margin-top: 100px;
-  display: none;
 
   @media (max-width: ${breakPoints.mobile}) {
-    display: block;
+    position: initial;
+    text-align: center;
+    margin-top: 100px;
   }
 `;
