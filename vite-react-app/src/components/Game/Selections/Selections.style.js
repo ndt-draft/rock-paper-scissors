@@ -9,6 +9,8 @@ export const StyledSelections = styled.div`
   grid-template-rows: auto; /* Automatically adjust row heights */
   align-items: center; /* Center align items vertically if needed */
 
+  padding: 0 20px;
+
   .choice,
   .status {
     text-align: center; /* Optional, for centering content */
