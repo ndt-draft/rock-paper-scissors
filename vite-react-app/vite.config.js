@@ -45,4 +45,9 @@ export default defineConfig({
       },
     ],
   },
+  test: {
+    environment: "jsdom", // Use jsdom for DOM-like environment
+    globals: true, // Make Vitest utilities like `expect` globally available
+    exclude: ["src/TestExamples/**", "node_modules"], // Exclude TestVitestExamples
+  },
 });
